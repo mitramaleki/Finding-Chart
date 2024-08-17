@@ -1,81 +1,35 @@
+# 🌟 Star Finder and Astrometric Plotter
+
+Hi! Welcome to my project. This script helps you fetch celestial images, detect stars, match them with Gaia catalog data, and display interactive plots. It’s designed for astronomers, researchers, or anyone who's into exploring the stars. You can input your target's RA/Dec, and it will handle the rest—fetching images, detecting stars, matching them with the Gaia catalog, and drawing everything on a nice annotated plot. 
+
+## ✨ What It Can Do
+
+- **Get Images from the Sky**: I’m using Aladin's HiPS2FITS service to pull down images based on RA/Dec coordinates.
+- **Detect Stars**: The script can detect stars in the image using OpenCV and some thresholding magic.
+- **Match Stars with Gaia Data**: It pulls star data from the Gaia catalog and matches the detected stars to actual stars with their RA, Dec, and magnitudes.
+- **Display Interactive Plots**: You’ll get a plot showing all the stars with a field of view circle, star markers, and directional labels (N, S, E, W). You can even hover over the stars for more details like magnitude and position.
+- **Customizable Settings**: You can adjust the field of view, scale bars, position angles, and more to fit your specific needs.
+
+## 🛠️ Setup
+
+You’ll need Python 3.7 or above. Here’s how to install everything you need:
+
+pip install requests Pillow matplotlib numpy opencv-python astroquery astropy mplcursors
 
 
-# Astronomy Finding Chart Tool
-
-## Overview
-
-This tool helps you create finding charts for astronomical observations. It fetches images, processes them, and annotates with star positions and relevant information.
-
-## Features
-
-- Fetches finding chart images based on RA and Dec using Aladin HiPS2FITS.
-- Enhances image contrast.
-- Queries Gaia catalog for star data.
-- Converts RA and Dec to pixel coordinates for annotation.
-- Displays images with annotations and interactive tooltips.
-
-## Installation
-
-Install the required packages:
-
-```sh
-pip install requests Pillow matplotlib mplcursors numpy astroquery astropy
-```
-
-## Usage
-
-1. Clone the repository:
-
-```sh
-git clone https://github.com/yourusername/astronomy-finding-chart-tool.git
-cd astronomy-finding-chart-tool
-```
-
-2. Run the script:
-
-```sh
-python main.py
-```
-
-3. Enter the required information when prompted:
-
-- Observing run ID
-- PI Name
-- OB Name
-- Target Name
-- RA (in degrees)
-- Dec (in degrees)
-- Wavelength Range
-- Scale Length (in arcseconds)
-- Field of View (FOV) in arcminutes
-
-You can also add RA and Dec offsets if needed.
-
-## Example
-
-```
-Enter the Observing run ID: 12345
-Enter the PI Name: John Doe
-Enter the OB Name: Observation 1
-Enter the Target Name: Alpha Centauri
-Enter the RA (in degrees): 219.9021
-Enter the Dec (in degrees): -60.8339
-Enter the Wavelength Range: 400-700 nm
-Enter the Scale Length (in arcseconds): 120
-Enter the Field of View (FOV) in arcminutes (default 20): 4
-Enter the RA Offset (in arcseconds, or 'done' to finish): 218.80
-Enter the Dec Offset (in arcseconds): -60.80
-Enter the RA Offset (in arcseconds, or 'done' to finish): done
-```
-
-## How It Works
-
-- `fetch_aladin_finding_chart`: Fetches an image from Aladin HiPS2FITS.
-- `enhance_contrast`: Enhances image contrast.
-- `fetch_star_data`: Queries Gaia catalog for star data.
-- `ra_dec_to_pixels`: Converts RA and Dec to pixel coordinates.
-- `display_image_with_annotations`: Displays the image with annotations.
-
-## License
-
-This project is for INO(Iran National Observatory).
+Example:
+if __name__ == "__main__":
+    main(
+        observing_run_id='12345',
+        pi_name='Dr. Jane Doe',
+        ob_name='Observation XYZ',
+        target='Target Name',
+        ra=103.34,
+        dec=23.45,
+        wavelength_range=323,
+        scale_length_input=50,
+        fov_arcminutes_input=4,
+        ra_offsets=[50],
+        dec_offsets=[50],
+        pos_angle=45
+    )
