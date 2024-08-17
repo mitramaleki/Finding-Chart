@@ -1,7 +1,9 @@
 # 🌟 Star Finder and Astrometric Plotter
 
-Hi! Welcome to my project. This script helps you fetch celestial images, detect stars, match them with Gaia catalog data, and display interactive plots. It’s designed for astronomers, researchers, or anyone who's into exploring the stars. You can input your target's RA/Dec, and it will handle the rest—fetching images, detecting stars, matching them with the Gaia catalog, and drawing everything on a nice annotated plot. 
-
+Hi! Welcome to my project.Finding chart was a big part of my project in INO(Iran National Observatory). why do we made that? cause Astronomers need a hand!(:
+This script helps you fetch celestial images, detect stars, match them with Gaia catalog data, and display interactive plots. It’s designed for astronomers, researchers, or anyone who's into exploring the stars. You can input your target's RA/Dec, and it will handle the rest—fetching images, detecting stars, matching them with the Gaia catalog, and drawing everything on a nice annotated plot. 
+Feel free to send your comments to my email (mitramalekiy@gmai.com) 
+it will be a big help for me to improve it more!
 ## ✨ What It Can Do
 
 - **Get Images from the Sky**: I’m using Aladin's HiPS2FITS service to pull down images based on RA/Dec coordinates.
